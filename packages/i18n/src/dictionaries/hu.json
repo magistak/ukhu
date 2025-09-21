@@ -1,0 +1,61 @@
+{
+  "navigation": {
+    "home": "Kezdőlap",
+    "guides": "Útmutatók",
+    "faq": "GYIK",
+    "about": "Rólunk",
+    "contact": "Kapcsolat",
+    "profile": "Profil"
+  },
+  "footer": {
+    "legal": "A tájékoztatás nem helyettesíti a hivatalos tanácsadást."
+  },
+  "home": {
+    "title": "Tervezd meg a költözést Magyarország és az Egyesült Királyság között",
+    "intro": "Lépésről lépésre útmutatók, menthető ellenőrző listák és megbízható források a magabiztos költözéshez.",
+    "featuredGuides": "Kiemelt útmutatók",
+    "readGuide": "Útmutató megnyitása"
+  },
+  "guides": {
+    "title": "Útmutatók",
+    "empty": "Az útmutatók hamarosan elérhetők.",
+    "updated": "Frissítve"
+  },
+  "faq": {
+    "title": "Gyakori kérdések",
+    "empty": "Jelenleg nincs elérhető kérdés."
+  },
+  "about": {
+    "title": "Rólunk",
+    "body": "Hivatalos forrásokat, ellenőrző listákat és gyakorlati tanácsokat gyűjtünk, hogy a költözés gördülékeny legyen."
+  },
+  "contact": {
+    "title": "Kapcsolat",
+    "intro": "Vedd fel a kapcsolatot a szerkesztőséggel kérdések vagy pontosítások esetén.",
+    "fields": {
+      "name": "Név",
+      "email": "E-mail",
+      "message": "Miben segíthetünk?"
+    },
+    "submit": "Üzenet küldése",
+    "success": "Köszönjük! Hamarosan jelentkezünk.",
+    "error": "Hiba történt. Próbáld újra később."
+  },
+  "profile": {
+    "title": "Profilod",
+    "intro": "Jelentkezz be, hogy elmentsd az ellenőrző listákat és követni tudd a haladást.",
+    "signin": "Bejelentkezés",
+    "signout": "Kijelentkezés",
+    "signup": "Fiók létrehozása",
+    "reset": "Jelszó visszaállítása",
+    "resetHint": "E-mailben küldünk visszaállító linket.",
+    "cancel": "Mégse",
+    "email": "E-mail",
+    "password": "Jelszó",
+    "success": "Sikerült!",
+    "error": "A művelet nem sikerült."
+  },
+  "language": {
+    "label": "Nyelv"
+  }
+}

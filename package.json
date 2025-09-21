@@ -1,0 +1,28 @@
+{
+  "name": "ukhu",
+  "private": true,
+  "version": "0.0.0",
+  "packageManager": "pnpm@9.12.0",
+  "engines": {
+    "node": ">=18.18.0"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @ukhu/web dev",
+    "build": "pnpm --filter @ukhu/web build",
+    "start": "pnpm --filter @ukhu/web start",
+    "lint": "pnpm --filter @ukhu/web lint",
+    "typecheck": "pnpm run -r typecheck",
+    "test": "vitest run",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md,css}\""
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.11",
+    "@typescript-eslint/eslint-plugin": "^7.17.0",
+    "@typescript-eslint/parser": "^7.17.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.4",
+    "vitest": "^1.6.0"
+  }
+}

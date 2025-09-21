@@ -1,0 +1,14 @@
+node_modules
+pnpm-lock.yaml
+.next
+out
+dist
+coverage
+.env
+.env.local
+.env.*.local
+.firebase
+firebase-debug.log
+.functions
+.DS_Store
+.secrets

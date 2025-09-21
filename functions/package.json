@@ -1,0 +1,23 @@
+{
+  "name": "@ukhu/functions",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "tsc --project tsconfig.json",
+    "clean": "rm -rf lib",
+    "typecheck": "tsc --project tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "firebase-admin": "^12.5.0",
+    "firebase-functions": "^4.9.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4"
+  }
+}

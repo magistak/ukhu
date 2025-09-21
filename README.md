@@ -37,3 +37,27 @@ Bilingual, mobile-first site helping **Hungarian citizens → UK** and **UK citi
 - `AGENTS.md` – how LLM agents collaborate
 - `PROMPTS/INITIAL_PROMPT.md` – Codex bootstrap prompt
 - `LICENSE.md` – MIT
+
+## Getting Started
+1. Install Node.js 20 (or newer 18 LTS) and enable `pnpm` via `corepack enable pnpm`.
+2. Duplicate `.env.example` to `.env.local` and fill Firebase + WordPress credentials.
+3. Install dependencies with `pnpm install`.
+4. Run the web app locally with `pnpm dev` (Next.js on http://localhost:3000).
+5. Launch Firebase emulators when developing auth/forms:
+   ```bash
+   pnpm --filter @ukhu/functions build
+   firebase emulators:start --only functions,firestore
+   ```
+6. Execute quality gates:
+   - Type checks: `pnpm typecheck`
+   - Linting: `pnpm lint`
+   - Unit tests: `pnpm test`
+
+## Environment reference
+See `.env.example` for all variables. Minimum required for local dev:
+- Firebase client keys (`NEXT_PUBLIC_FIREBASE_*`)
+- WordPress REST endpoint + token (`WP_API_URL`, `WP_API_TOKEN`)
+- `NEXT_PUBLIC_DEFAULT_LOCALE`, `NEXT_PUBLIC_LOCALES`
+
+When the CMS or Functions are not configured, the app falls back to mocked content and console logging adapters so the UI still renders.
+- `NEXT_PUBLIC_SITE_URL` (used for sitemap/robots); optional `NEXT_PUBLIC_ANALYTICS_DEBUG` toggles console logging for the analytics placeholder.

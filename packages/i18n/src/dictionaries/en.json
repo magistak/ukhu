@@ -1,0 +1,61 @@
+{
+  "navigation": {
+    "home": "Home",
+    "guides": "Guides",
+    "faq": "FAQ",
+    "about": "About",
+    "contact": "Contact",
+    "profile": "Profile"
+  },
+  "footer": {
+    "legal": "All guidance is informational only."
+  },
+  "home": {
+    "title": "Plan your move between Hungary and the UK",
+    "intro": "Step-by-step guides, saved checklists, and trusted resources to move with confidence.",
+    "featuredGuides": "Featured guides",
+    "readGuide": "Read guide"
+  },
+  "guides": {
+    "title": "Guides",
+    "empty": "Guides will appear here once published.",
+    "updated": "Last updated"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "empty": "No FAQs available yet."
+  },
+  "about": {
+    "title": "About",
+    "body": "We collect official resources, checklists, and practical advice so you can move smoothly."
+  },
+  "contact": {
+    "title": "Contact",
+    "intro": "Reach the editorial team for questions or corrections.",
+    "fields": {
+      "name": "Name",
+      "email": "Email",
+      "message": "How can we help?"
+    },
+    "submit": "Send message",
+    "success": "Thanks! We'll get back to you soon.",
+    "error": "Something went wrong. Please try again later."
+  },
+  "profile": {
+    "title": "Your profile",
+    "intro": "Sign in to save checklists and track your progress.",
+    "signin": "Sign in",
+    "signout": "Sign out",
+    "signup": "Create account",
+    "reset": "Reset password",
+    "resetHint": "We'll email you a reset link.",
+    "cancel": "Cancel",
+    "email": "Email",
+    "password": "Password",
+    "success": "Done!",
+    "error": "Could not complete the request."
+  },
+  "language": {
+    "label": "Language"
+  }
+}

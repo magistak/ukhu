@@ -11,15 +11,17 @@ export function generateStaticParams() {
 
 interface LocaleLayoutProps {
   children: ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }
 
 export default async function LocaleLayout({ children, params }: LocaleLayoutProps) {
-  if (!isLocale(params.locale)) {
+  const { locale: localeParam } = await params;
+  
+  if (!isLocale(localeParam)) {
     notFound();
   }
 
-  const locale = params.locale as Locale;
+  const locale = localeParam as Locale;
   const dictionary = await getDictionary<DictionaryShape>(locale);
 
   const navigationLabels = {

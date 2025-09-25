@@ -3,15 +3,17 @@ import { loadFaqs } from '@/lib/content';
 import { getDictionary, isLocale, type Locale } from '@ukhu/i18n';
 
 interface FaqPageProps {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }
 
 export default async function FaqPage({ params }: FaqPageProps) {
-  if (!isLocale(params.locale)) {
+  const { locale: localeParam } = await params;
+  
+  if (!isLocale(localeParam)) {
     notFound();
   }
 
-  const locale = params.locale as Locale;
+  const locale = localeParam as Locale;
   const dictionary = await getDictionary<FaqDictionary>(locale);
   const faqs = await loadFaqs(locale);
 

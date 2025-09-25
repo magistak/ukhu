@@ -3,19 +3,21 @@ import { loadGuide } from '@/lib/content';
 import { getDictionary, isLocale, type Locale } from '@ukhu/i18n';
 
 interface GuideDetailPageProps {
-  params: { locale: string; slug: string };
+  params: Promise<{ locale: string; slug: string }>;
 }
 
 export const revalidate = 60;
 
 export default async function GuideDetailPage({ params }: GuideDetailPageProps) {
-  if (!isLocale(params.locale)) {
+  const { locale: localeParam, slug } = await params;
+  
+  if (!isLocale(localeParam)) {
     notFound();
   }
 
-  const locale = params.locale as Locale;
+  const locale = localeParam as Locale;
   const dictionary = await getDictionary<GuideDictionary>(locale);
-  const guide = await loadGuide(locale, params.slug);
+  const guide = await loadGuide(locale, slug);
 
   if (!guide) {
     notFound();

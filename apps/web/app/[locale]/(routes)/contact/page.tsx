@@ -3,15 +3,17 @@ import { ContactForm } from '@/components/contact-form';
 import { getDictionary, isLocale, type Locale } from '@ukhu/i18n';
 
 interface ContactPageProps {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }
 
 export default async function ContactPage({ params }: ContactPageProps) {
-  if (!isLocale(params.locale)) {
+  const { locale: localeParam } = await params;
+  
+  if (!isLocale(localeParam)) {
     notFound();
   }
 
-  const locale = params.locale as Locale;
+  const locale = localeParam as Locale;
   const dictionary = await getDictionary<ContactDictionary>(locale);
 
   return (

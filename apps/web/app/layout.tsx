@@ -1,7 +1,14 @@
 import type { Metadata } from 'next';
 import { ReactNode } from 'react';
+import { Inter } from 'next/font/google';
 import './globals.css';
 import { Analytics } from '@/components/analytics';
+
+const inter = Inter({ 
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter'
+});
 
 export const metadata: Metadata = {
   title: {
@@ -18,7 +25,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className={inter.className}>
         {children}
         <Analytics />
       </body>

@@ -14,7 +14,19 @@
     "title": "Tervezd meg a költözést Magyarország és az Egyesült Királyság között",
     "intro": "Lépésről lépésre útmutatók, menthető ellenőrző listák és megbízható források a magabiztos költözéshez.",
     "featuredGuides": "Kiemelt útmutatók",
-    "readGuide": "Útmutató megnyitása"
+    "readGuide": "Útmutató megnyitása",
+    "trustIndicators": {
+      "official": "Hivatalos Források",
+      "verified": "Ellenőrzött Információk",
+      "bilingual": "Kétnyelvű Támogatás"
+    },
+    "guidesSubtitle": "Lépésről lépésre útmutatás a költözési folyamathoz",
+    "cta": {
+      "title": "Készen állsz az utazásra?",
+      "subtitle": "Személyre szabott útmutatás és haladáskövetés átfogó költözési eszközeinkkel",
+      "browseGuides": "Összes Útmutató",
+      "getHelp": "Segítség Kérése"
+    }
   },
   "guides": {
     "title": "Útmutatók",
@@ -31,6 +43,7 @@
   },
   "contact": {
     "title": "Kapcsolat",
+    "formTitle": "Lépj Kapcsolatba",
     "intro": "Vedd fel a kapcsolatot a szerkesztőséggel kérdések vagy pontosítások esetén.",
     "fields": {
       "name": "Név",
@@ -38,6 +51,7 @@
       "message": "Miben segíthetünk?"
     },
     "submit": "Üzenet küldése",
+    "submitting": "Küldés...",
     "success": "Köszönjük! Hamarosan jelentkezünk.",
     "error": "Hiba történt. Próbáld újra később."
   },

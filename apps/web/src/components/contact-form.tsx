@@ -5,10 +5,12 @@ import { useState, FormEvent } from 'react';
 interface ContactFormProps {
   locale: string;
   labels: {
+    formTitle: string;
     name: string;
     email: string;
     message: string;
     submit: string;
+    submitting: string;
     success: string;
     error: string;
   };
@@ -61,49 +63,55 @@ export function ContactForm({ locale, labels }: ContactFormProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit} style={{ display: 'grid', gap: '1rem', maxWidth: '480px' }}>
-      <label style={{ display: 'grid', gap: '0.25rem' }}>
-        <span>{labels.name}</span>
-        <input
-          name="name"
-          type="text"
-          required
-          style={{ padding: '0.5rem', borderRadius: '0.25rem', border: '1px solid #ccc' }}
-        />
-      </label>
-      <label style={{ display: 'grid', gap: '0.25rem' }}>
-        <span>{labels.email}</span>
-        <input
-          name="email"
-          type="email"
-          required
-          style={{ padding: '0.5rem', borderRadius: '0.25rem', border: '1px solid #ccc' }}
-        />
-      </label>
-      <label style={{ display: 'grid', gap: '0.25rem' }}>
-        <span>{labels.message}</span>
-        <textarea
-          name="message"
-          rows={5}
-          required
-          style={{ padding: '0.5rem', borderRadius: '0.25rem', border: '1px solid #ccc' }}
-        />
-      </label>
-      <button
-        type="submit"
-        disabled={status === 'loading'}
-        style={{
-          padding: '0.75rem 1rem',
-          borderRadius: '0.5rem',
-          border: 'none',
-          background: 'black',
-          color: 'white',
-          cursor: 'pointer'
-        }}
-      >
-        {status === 'loading' ? '...' : labels.submit}
-      </button>
-      {message && <p>{message}</p>}
-    </form>
+    <div className="card" style={{ maxWidth: '600px' }}>
+      <h3 style={{ marginTop: 0, marginBottom: 'var(--space-lg)' }}>{labels.formTitle}</h3>
+      <form onSubmit={handleSubmit} className="grid" style={{ gap: 'var(--space-lg)' }}>
+        <label style={{ display: 'grid', gap: 'var(--space-xs)' }}>
+          <span>{labels.name}</span>
+          <input
+            name="name"
+            type="text"
+            required
+          />
+        </label>
+        <label style={{ display: 'grid', gap: 'var(--space-xs)' }}>
+          <span>{labels.email}</span>
+          <input
+            name="email"
+            type="email"
+            required
+          />
+        </label>
+        <label style={{ display: 'grid', gap: 'var(--space-xs)' }}>
+          <span>{labels.message}</span>
+          <textarea
+            name="message"
+            rows={5}
+            required
+          />
+        </label>
+        <button
+          type="submit"
+          disabled={status === 'loading'}
+          className="btn-primary"
+          style={{ 
+            opacity: status === 'loading' ? 0.7 : 1 
+          }}
+        >
+          {status === 'loading' ? labels.submitting : labels.submit}
+        </button>
+        {message && (
+          <div style={{ 
+            padding: 'var(--space-md)',
+            borderRadius: 'var(--radius-md)',
+            backgroundColor: status === 'success' ? '#dcfce7' : '#fef2f2',
+            color: status === 'success' ? '#166534' : '#dc2626',
+            border: `1px solid ${status === 'success' ? '#bbf7d0' : '#fecaca'}`
+          }}>
+            {message}
+          </div>
+        )}
+      </form>
+    </div>
   );
 }

@@ -13,22 +13,26 @@ interface SiteHeaderProps {
 
 export function SiteHeader({ locale, navigation, languageLabel }: SiteHeaderProps) {
   return (
-    <header style={{ background: 'white', borderBottom: '1px solid #e5e5e5' }}>
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          width: 'min(960px, 90vw)',
-          margin: '0 auto',
-          padding: '1rem 0'
-        }}
-      >
-        <Link href={`/${locale}`} style={{ fontWeight: 600, fontSize: '1.1rem' }}>
-          HU↔UK Portal
+    <header className="site-header">
+      <div className="container flex" style={{
+        justifyContent: 'space-between',
+        padding: 'var(--space-lg) var(--space-md)'
+      }}>
+        <Link 
+          href={`/${locale}`} 
+          style={{ 
+            fontWeight: 700, 
+            fontSize: 'var(--text-xl)',
+            color: 'var(--color-primary)',
+            display: 'flex',
+            alignItems: 'center',
+            gap: 'var(--space-xs)'
+          }}
+        >
+          🇭🇺↔🇬🇧 HU↔UK Portal
         </Link>
         <nav>
-          <ul style={{ display: 'flex', gap: '1rem', alignItems: 'center', margin: 0, padding: 0 }}>
+          <ul>
             {navigation.map((item) => (
               <li key={item.key}>
                 <Link href={buildRoute(locale, item.key)}>{item.label}</Link>

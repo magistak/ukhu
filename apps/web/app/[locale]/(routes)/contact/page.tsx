@@ -25,10 +25,12 @@ export default async function ContactPage({ params }: ContactPageProps) {
       <ContactForm
         locale={locale}
         labels={{
+          formTitle: dictionary.contact.formTitle,
           name: dictionary.contact.fields.name,
           email: dictionary.contact.fields.email,
           message: dictionary.contact.fields.message,
           submit: dictionary.contact.submit,
+          submitting: dictionary.contact.submitting,
           success: dictionary.contact.success,
           error: dictionary.contact.error
         }}
@@ -40,6 +42,7 @@ export default async function ContactPage({ params }: ContactPageProps) {
 type ContactDictionary = {
   contact: {
     title: string;
+    formTitle: string;
     intro: string;
     fields: {
       name: string;
@@ -47,6 +50,7 @@ type ContactDictionary = {
       message: string;
     };
     submit: string;
+    submitting: string;
     success: string;
     error: string;
   };

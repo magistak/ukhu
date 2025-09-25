@@ -14,7 +14,19 @@
     "title": "Plan your move between Hungary and the UK",
     "intro": "Step-by-step guides, saved checklists, and trusted resources to move with confidence.",
     "featuredGuides": "Featured guides",
-    "readGuide": "Read guide"
+    "readGuide": "Read guide",
+    "trustIndicators": {
+      "official": "Official Resources",
+      "verified": "Verified Information",
+      "bilingual": "Bilingual Support"
+    },
+    "guidesSubtitle": "Step-by-step guidance for your relocation journey",
+    "cta": {
+      "title": "Ready to start your journey?",
+      "subtitle": "Get personalized guidance and track your progress with our comprehensive relocation tools",
+      "browseGuides": "Browse All Guides",
+      "getHelp": "Get Help"
+    }
   },
   "guides": {
     "title": "Guides",
@@ -31,6 +43,7 @@
   },
   "contact": {
     "title": "Contact",
+    "formTitle": "Contact Us",
     "intro": "Reach the editorial team for questions or corrections.",
     "fields": {
       "name": "Name",
@@ -38,6 +51,7 @@
       "message": "How can we help?"
     },
     "submit": "Send message",
+    "submitting": "Sending...",
     "success": "Thanks! We'll get back to you soon.",
     "error": "Something went wrong. Please try again later."
   },

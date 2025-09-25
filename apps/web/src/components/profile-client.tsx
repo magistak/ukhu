@@ -67,9 +67,11 @@ export function ProfileClient({ labels }: ProfileClientProps) {
       }
       event.currentTarget.reset();
     } catch (error) {
-      console.error(error);
+      console.error('Firebase auth error:', error);
       setStatus('error');
-      setMessage(labels.error);
+      // Show more specific error message for debugging
+      const errorMessage = error instanceof Error ? error.message : labels.error;
+      setMessage(errorMessage);
     }
   }
 
@@ -77,9 +79,11 @@ export function ProfileClient({ labels }: ProfileClientProps) {
     try {
       await signOut(auth);
     } catch (error) {
-      console.error(error);
+      console.error('Firebase signout error:', error);
       setStatus('error');
-      setMessage(labels.error);
+      // Show more specific error message for debugging
+      const errorMessage = error instanceof Error ? error.message : labels.error;
+      setMessage(errorMessage);
     }
   }
 

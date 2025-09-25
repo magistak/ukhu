@@ -44,26 +44,14 @@ export function resolveFirebaseConfig(): FirebaseConfig {
   } = process.env;
 
   // If running in browser and environment variables aren't available, 
-  // set them manually from the global environment (client-side workaround)
+  // throw an error instead of using hardcoded fallbacks
   if (typeof window !== 'undefined' && (
     !NEXT_PUBLIC_FIREBASE_API_KEY ||
     !NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN ||
     !NEXT_PUBLIC_FIREBASE_PROJECT_ID ||
     !NEXT_PUBLIC_FIREBASE_APP_ID
   )) {
-    // Try to get them from the browser's environment (if available in the bundle)
-    const config = {
-      apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY || 'AIzaSyBlnUJDublnCKQA4sjkecAXNhTkw48j1b0',
-      authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN || 'ukhu-7de4d.firebaseapp.com',
-      projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID || 'ukhu-7de4d',
-      storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET || 'ukhu-7de4d.firebasestorage.app',
-      messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID || '88116679766',
-      appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID || '1:88116679766:web:8ea52d57953e2ac278d7f7'
-    };
-    
-    // Cache the config for future use
-    manualConfig = config;
-    return config;
+    throw new Error('Firebase environment variables are not available in the browser. Please ensure NEXT_PUBLIC_FIREBASE_* variables are properly configured.');
   }
 
   if (

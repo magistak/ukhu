@@ -65,7 +65,14 @@ export function ProfileClient({ labels }: ProfileClientProps) {
       if (mode === 'reset') {
         setMode('signin');
       }
-      event.currentTarget.reset();
+      // Safely reset form if it still exists (avoid race condition on re-render)
+      try {
+        if (event.currentTarget) {
+          event.currentTarget.reset();
+        }
+      } catch (error) {
+        // Ignore reset errors due to component re-rendering
+      }
     } catch (error) {
       console.error('Firebase auth error:', error);
       setStatus('error');

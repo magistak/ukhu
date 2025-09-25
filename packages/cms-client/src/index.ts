@@ -77,18 +77,22 @@ const mockFaqs: Faq[] = [
 ];
 
 function getWpRestBase(): string | null {
-  const url = process.env.WP_API_URL;
+  const url = process.env.WORDPRESS_API_URL;
   if (!url) return null;
   return url.replace(/\/$/, '');
 }
 
-const WP_TOKEN = process.env.WP_API_TOKEN;
+const WP_USERNAME = process.env.WORDPRESS_API_USERNAME;
+const WP_PASSWORD = process.env.WORDPRESS_API_PASSWORD;
 
 async function fetchJson<T>(input: string, init?: RequestInit): Promise<T> {
   const headers = new Headers(init?.headers);
   headers.set('Accept', 'application/json');
-  if (WP_TOKEN) {
-    headers.set('Authorization', `Bearer ${WP_TOKEN}`);
+  
+  // Use Application Password authentication (HTTP Basic Auth)
+  if (WP_USERNAME && WP_PASSWORD) {
+    const credentials = btoa(`${WP_USERNAME}:${WP_PASSWORD}`);
+    headers.set('Authorization', `Basic ${credentials}`);
   }
 
   const response = await fetch(input, {

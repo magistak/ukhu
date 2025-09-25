@@ -1,6 +1,11 @@
 # Overview
 
-This project is a bilingual (English/Hungarian) relocation portal that helps people move between Hungary and the UK. The application provides step-by-step guides, interactive checklists, and practical resources for visa applications, housing, healthcare, and other relocation needs. It uses a headless architecture where WordPress serves as the content management system for editors, while a Next.js frontend delivers fast, mobile-first user experiences with Firebase handling authentication, data storage, and serverless functions.
+This project provides **two separate relocation portals** with different purposes:
+
+- **Hungarian Site** (`/hu/*`): For Hungarians moving to the UK (HU→UK) - content in Hungarian
+- **English Site** (`/en/*`): For anyone moving to Hungary (→HU) - content in English
+
+Each language serves a completely different audience and direction, with tailored content, guides, and resources. The application uses a headless architecture where WordPress serves as the content management system for editors, while a Next.js frontend delivers fast, mobile-first user experiences with Firebase handling authentication, data storage, and serverless functions.
 
 # User Preferences
 

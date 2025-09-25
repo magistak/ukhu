@@ -8,7 +8,9 @@ import {
 import type { Locale } from '@ukhu/i18n';
 
 export async function loadGuides(locale: Locale, filters?: Omit<GuidesQuery, 'locale'>) {
-  return getGuides({ locale, ...filters });
+  // Enforce direction-specific audience filtering
+  const audience = locale === 'hu' ? 'hu-to-uk' : 'to-hungary';
+  return getGuides({ locale, audience, ...filters });
 }
 
 export async function loadGuide(locale: Locale, slug: string) {

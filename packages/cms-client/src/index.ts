@@ -42,20 +42,29 @@ export interface CmsClientOptions {
 
 const mockGuides: Guide[] = [
   {
-    id: 'mock-guide-1',
-    slug: 'first-steps',
+    id: 'mock-guide-en-1',
+    slug: 'relocate-to-hungary-first-steps',
     locale: 'en',
-    title: 'First steps after arriving in the UK',
-    excerpt: 'Register your address, health care, and tax number.',
+    title: 'First steps for moving to Hungary',
+    excerpt: 'Essential tasks when relocating to Hungary: residence permits, healthcare, banking.',
     topic: ['arrival'],
+    audience: ['to-hungary']
+  },
+  {
+    id: 'mock-guide-hu-1',
+    slug: 'brit-viza-kalauz',
+    locale: 'hu',
+    title: 'Brit vízum útmutató - Melyik típus kell neked?',
+    excerpt: 'Skilled Worker, Student, Family - válaszd ki a megfelelő vízumtípust az UK-ba költözéshez.',
+    topic: ['visa'],
     audience: ['hu-to-uk']
   },
   {
-    id: 'mock-guide-1-hu',
-    slug: 'elso-lepesek',
+    id: 'mock-guide-hu-2',
+    slug: 'elso-lepesek-angliaban',
     locale: 'hu',
-    title: 'Első lépések az Egyesült Királyságban',
-    excerpt: 'Lakóhelybejelentés, egészségügyi regisztráció, adószám.',
+    title: 'Első lépések Angliában',
+    excerpt: 'Lakóhelybejelentés, GP regisztráció, National Insurance szám igénylése.',
     topic: ['arrival'],
     audience: ['hu-to-uk']
   }
@@ -63,16 +72,28 @@ const mockGuides: Guide[] = [
 
 const mockFaqs: Faq[] = [
   {
-    id: 'mock-faq-1',
+    id: 'mock-faq-en-1',
     locale: 'en',
     question: 'Do I need a visa to work in Hungary?',
-    answer: 'Check the UK government guidance. Most nationals will need a work permit.'
+    answer: 'EU citizens can work freely. Non-EU citizens need a work permit and residence permit. Check Hungarian immigration requirements.'
   },
   {
-    id: 'mock-faq-1-hu',
+    id: 'mock-faq-en-2',
+    locale: 'en',
+    question: 'How do I find housing in Budapest?',
+    answer: 'Check ingatlan.com, alberlet.hu, and Facebook groups. Consider temporary accommodation first.'
+  },
+  {
+    id: 'mock-faq-hu-1',
     locale: 'hu',
-    question: 'Szükségem van vízumra az Egyesült Királyságban?',
-    answer: 'Az aktuális információkért nézd meg a hivatalos kormányzati útmutatót.'
+    question: 'Milyen típusú brit vízumra van szükségem?',
+    answer: 'Függ a céltól: Skilled Worker (munka), Student (tanulás), Family (család), Health & Care (egészségügy). Minden típushoz más követelmények tartoznak.'
+  },
+  {
+    id: 'mock-faq-hu-2',
+    locale: 'hu',
+    question: 'Mennyibe kerül az angol nyelvvizsga?',
+    answer: 'IELTS: £180-200, TOEFL: £245. A Skilled Worker vízumhoz B2 szint szükséges, kivéve ha az ISL listán szerepel a munkakör.'
   }
 ];
 
@@ -157,7 +178,10 @@ export async function getGuides(
   const base = getWpRestBase();
 
   if (!base) {
-    return mockGuides.filter((guide) => guide.locale === query.locale);
+    return mockGuides.filter((guide) => 
+      guide.locale === query.locale && 
+      (!query.audience || guide.audience?.includes(query.audience))
+    );
   }
 
   const endpoint = buildGuidesEndpoint(base, query, options);

@@ -65,8 +65,8 @@ export default async function HomePage({ params }: HomePageProps) {
               <div style={{ fontSize: 'var(--text-sm)', opacity: 0.9 }}>{dictionary.home.trustIndicators.verified}</div>
             </div>
             <div style={{ textAlign: 'center' }}>
-              <div style={{ fontSize: 'var(--text-2xl)', fontWeight: 700 }}>🌐</div>
-              <div style={{ fontSize: 'var(--text-sm)', opacity: 0.9 }}>{dictionary.home.trustIndicators.bilingual}</div>
+              <div style={{ fontSize: 'var(--text-2xl)', fontWeight: 700 }}>🔄</div>
+              <div style={{ fontSize: 'var(--text-sm)', opacity: 0.9 }}>{dictionary.home.trustIndicators.upToDate}</div>
             </div>
           </div>
         </div>
@@ -170,7 +170,7 @@ type HomeDictionary = {
     trustIndicators: {
       official: string;
       verified: string;
-      bilingual: string;
+      upToDate: string;
     };
     guidesSubtitle: string;
     cta: {

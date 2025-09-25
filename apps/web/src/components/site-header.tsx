@@ -29,7 +29,7 @@ export function SiteHeader({ locale, navigation, languageLabel }: SiteHeaderProp
             gap: 'var(--space-xs)'
           }}
         >
-          🇭🇺↔🇬🇧 HU↔UK Portal
+          {locale === 'hu' ? '🇭🇺→🇬🇧 UK Relocation' : '🇬🇧←🇭🇺 Hungary Portal'}
         </Link>
         <nav>
           <ul>

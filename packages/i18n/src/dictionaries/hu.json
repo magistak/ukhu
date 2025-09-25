@@ -11,19 +11,19 @@
     "legal": "A tájékoztatás nem helyettesíti a hivatalos tanácsadást."
   },
   "home": {
-    "title": "Tervezd meg a költözést Magyarország és az Egyesült Királyság között",
-    "intro": "Lépésről lépésre útmutatók, menthető ellenőrző listák és megbízható források a magabiztos költözéshez.",
+    "title": "Költözz az Egyesült Királyságba magabiztosan",
+    "intro": "Teljes útmutatók, ellenőrző listák és hivatalos források a britanniai letelepedéshez.",
     "featuredGuides": "Kiemelt útmutatók",
     "readGuide": "Útmutató megnyitása",
     "trustIndicators": {
       "official": "Hivatalos Források",
       "verified": "Ellenőrzött Információk",
-      "bilingual": "Kétnyelvű Támogatás"
+      "upToDate": "Mindig Friss"
     },
-    "guidesSubtitle": "Lépésről lépésre útmutatás a költözési folyamathoz",
+    "guidesSubtitle": "Minden, ami az Egyesült Királyságba költözéshez kell",
     "cta": {
       "title": "Készen állsz az utazásra?",
-      "subtitle": "Személyre szabott útmutatás és haladáskövetés átfogó költözési eszközeinkkel",
+      "subtitle": "Szakértői útmutatás és haladáskövetés az Egyesült Királyságba költözéshez",
       "browseGuides": "Összes Útmutató",
       "getHelp": "Segítség Kérése"
     }

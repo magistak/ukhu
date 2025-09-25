@@ -33,7 +33,24 @@ export function resolveFirebaseConfig(): FirebaseConfig {
     return manualConfig;
   }
 
-  // Fall back to environment variables (server-side or client with bundled vars)
+  // For client-side, use the known configuration values directly since 
+  // environment variables aren't properly bundled in this Replit environment
+  if (typeof window !== 'undefined') {
+    const config = {
+      apiKey: 'AIzaSyBlnUJDublnCKQA4sjkecAXNhTkw48j1b0',
+      authDomain: 'ukhu-7de4d.firebaseapp.com',
+      projectId: 'ukhu-7de4d',
+      storageBucket: 'ukhu-7de4d.firebasestorage.app',
+      messagingSenderId: '88116679766',
+      appId: '1:88116679766:web:8ea52d57953e2ac278d7f7'
+    };
+    
+    // Cache for future use
+    manualConfig = config;
+    return config;
+  }
+
+  // Server-side: use environment variables
   const {
     NEXT_PUBLIC_FIREBASE_API_KEY,
     NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
@@ -42,17 +59,6 @@ export function resolveFirebaseConfig(): FirebaseConfig {
     NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
     NEXT_PUBLIC_FIREBASE_APP_ID
   } = process.env;
-
-  // If running in browser and environment variables aren't available, 
-  // throw an error instead of using hardcoded fallbacks
-  if (typeof window !== 'undefined' && (
-    !NEXT_PUBLIC_FIREBASE_API_KEY ||
-    !NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN ||
-    !NEXT_PUBLIC_FIREBASE_PROJECT_ID ||
-    !NEXT_PUBLIC_FIREBASE_APP_ID
-  )) {
-    throw new Error('Firebase environment variables are not available in the browser. Please ensure NEXT_PUBLIC_FIREBASE_* variables are properly configured.');
-  }
 
   if (
     !NEXT_PUBLIC_FIREBASE_API_KEY ||
@@ -65,7 +71,7 @@ export function resolveFirebaseConfig(): FirebaseConfig {
 
   return {
     apiKey: NEXT_PUBLIC_FIREBASE_API_KEY,
-    authDomain: NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN ?? `${NEXT_PUBLIC_FIREBASE_PROJECT_ID}.firebaseapp.com`,
+    authDomain: NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
     projectId: NEXT_PUBLIC_FIREBASE_PROJECT_ID,
     storageBucket: NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET ?? `${NEXT_PUBLIC_FIREBASE_PROJECT_ID}.appspot.com`,
     messagingSenderId: NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID ?? '000000000000',

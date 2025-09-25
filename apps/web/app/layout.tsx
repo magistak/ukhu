@@ -12,10 +12,10 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | HU↔UK Relocation Portal',
-    default: 'HU↔UK Relocation Portal'
+    template: '%s | Relocation Portal',
+    default: 'Relocation Portal'
   },
-  description: 'Bilingual relocation guidance for moving between Hungary and the UK.'
+  description: 'Complete relocation guidance for moving to Hungary or the UK.'
 };
 
 export default function RootLayout({

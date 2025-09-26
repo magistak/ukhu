@@ -3,7 +3,8 @@ import {
   getGuideBySlug,
   getFaqs,
   type Guide,
-  type GuidesQuery
+  type GuidesQuery,
+  type FaqsQuery
 } from '@ukhu/cms-client';
 import type { Locale } from '@ukhu/i18n';
 
@@ -18,7 +19,8 @@ export async function loadGuide(locale: Locale, slug: string) {
 }
 
 export async function loadFaqs(locale: Locale) {
-  return getFaqs(locale);
+  const audience = locale === 'hu' ? 'hu-to-uk' : 'to-hungary';
+  return getFaqs({ locale, audience });
 }
 
 export type { Guide };

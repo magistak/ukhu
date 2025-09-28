@@ -7,7 +7,7 @@
 - Keep dependencies lean. No UI kits for now.
 - Strong TypeScript where applicable.
 - Pass basic build/lint/test locally (include minimal tests).
-- i18n: EN/HU only; path-based routing.
+- Dual portals: EN/HU path-based routing for direction-specific content.
 
 ## Deliverables
 1. **Apps & hosting**
@@ -25,7 +25,7 @@
      - `getGuides({locale, topic?, audience?, page?})`
      - `getGuideBySlug({locale, slug})`
      - `getFaqs({locale})`
-   - Env for WP endpoints/tokens; graceful fallback if 404/translation missing
+   - Env for WP endpoints/tokens; graceful fallback if content missing
 
 3. **Auth & data**
    - Firebase client init (modular SDK)
@@ -48,7 +48,7 @@
 
 5. **i18n**
    - `packages/i18n`: JSON locale dictionaries (`en`, `hu`) for UI strings
-   - Language switch preserves current path if translation exists; else fallback to home of target locale
+   - Portal switch preserves current path if equivalent page exists; else fallback to home of target portal
    - Date/number formatting by locale
 
 6. **DX & quality**
@@ -67,7 +67,7 @@
      - `NEXT_PUBLIC_DEFAULT_LOCALE`, `NEXT_PUBLIC_LOCALES`
      - `NEXT_PUBLIC_FIREBASE_*` (client keys)
      - `FIREBASE_EMULATORS` (true/false)
-     - `WP_API_URL`, `WP_GRAPHQL_URL`, `WP_API_TOKEN` (if needed)
+     - `WORDPRESS_API_URL`, `WORDPRESS_API_USERNAME`, `WORDPRESS_API_PASSWORD` (if needed)
    - Update `README.md` quickstart with:
      - Node version, package manager
      - How to run dev (web + emulators)

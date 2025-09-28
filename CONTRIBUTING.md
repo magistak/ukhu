@@ -19,7 +19,7 @@
 - Node LTS, pnpm/yarn
 - `apps/web`: Next.js
 - Firebase emulators for Auth/Firestore/Functions
-- WP: point `WP_API_URL` to staging
+- WP: point `WORDPRESS_API_URL` to staging
 
 ## Commit conventions
 - `feat:`, `fix:`, `chore:`, `docs:`, `refactor:`, `test:` 

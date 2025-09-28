@@ -7,7 +7,7 @@ Use WordPress as headless CMS; Next.js front-end; Firebase for Auth/DB/Functions
 Accepted (v0.1)
 
 ## Context
-- Need editor-friendly CMS, bilingual, low-cost scaling, mobile-first performance.
+- Need editor-friendly CMS, dual-portal content management, low-cost scaling, mobile-first performance.
 - Avoid server maintenance; prefer CDN + serverless.
 
 ## Consequences

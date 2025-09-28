@@ -21,20 +21,20 @@ Preferred communication style: Simple, everyday language.
 - **SEO Optimization**: Built-in meta tags, sitemaps, robots.txt, and canonical URLs
 
 ## Backend Architecture
-- **Headless WordPress** as the content management system with multilingual support (Polylang/WPML)
+- **Headless WordPress** as the content management system with audience-based content taxonomy
 - **Firebase Functions** for serverless backend logic (contact forms, data validation)
 - **Firebase Firestore** for user data, checklists, and form submissions
 - **Firebase Authentication** for user management with email/password authentication
 - **Firebase Hosting** for static site deployment
 
-## Content Management
+## Content Management  
 - **WordPress Custom Post Types**: Guides, FAQs, Checklist Templates, Announcements
-- **Multilingual Content**: Structured content model with locale-aware fetching
+- **Audience-Based Content**: Structured content model with direction-specific filtering (`hu-to-uk`, `to-hungary`)
 - **Editorial Workflow**: Version control, review processes, and content freshness tracking
 - **API Integration**: REST/GraphQL endpoints for content delivery to the frontend
 
 ## Data Flow
-1. Editors create and manage content in WordPress with bilingual support
+1. Editors create and manage content in WordPress with audience-based taxonomy
 2. Next.js build process fetches content via WordPress API during static generation
 3. User interactions (auth, checklists, forms) are handled by Firebase services
 4. Contact forms route through Firebase Functions for validation and email notifications
@@ -49,8 +49,7 @@ Preferred communication style: Simple, everyday language.
 
 ## Content Management
 - **WordPress** (headless CMS with REST/GraphQL API)
-- **Polylang/WPML** for multilingual content management
-- **Advanced Custom Fields (ACF)** for structured content fields
+- **Advanced Custom Fields (ACF)** for structured content fields and audience taxonomy
 
 ## Frontend Framework
 - **Next.js 14** with TypeScript for React-based web application

@@ -1,0 +1,252 @@
+[
+    {
+        "key": "group_relocation_guides",
+        "title": "Guide Content Fields",
+        "fields": [
+            {
+                "key": "field_guide_locale",
+                "label": "Locale",
+                "name": "locale",
+                "type": "select",
+                "instructions": "Select the language locale for this guide. This must match the target portal.",
+                "required": 1,
+                "choices": {
+                    "en": "English (for →Hungary portal)",
+                    "hu": "Hungarian (for HU→UK portal)"
+                },
+                "default_value": "",
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 1,
+                "ajax": 0,
+                "return_format": "value",
+                "placeholder": "Select locale..."
+            },
+            {
+                "key": "field_guide_summary",
+                "label": "Summary",
+                "name": "summary",
+                "type": "textarea",
+                "instructions": "Brief summary of the guide content (used for excerpts and meta descriptions).",
+                "required": 0,
+                "rows": 3,
+                "new_lines": "br"
+            },
+            {
+                "key": "field_guide_last_updated",
+                "label": "Last Updated",
+                "name": "last_updated",
+                "type": "date_picker",
+                "instructions": "When was this guide last reviewed and updated?",
+                "required": 0,
+                "display_format": "d/m/Y",
+                "return_format": "Y-m-d",
+                "first_day": 1
+            },
+            {
+                "key": "field_guide_references",
+                "label": "Reference Links",
+                "name": "references",
+                "type": "repeater",
+                "instructions": "Add official government links, forms, and other authoritative sources.",
+                "required": 0,
+                "collapsed": "field_reference_title",
+                "min": 0,
+                "max": 10,
+                "layout": "table",
+                "button_label": "Add Reference",
+                "sub_fields": [
+                    {
+                        "key": "field_reference_title",
+                        "label": "Link Title",
+                        "name": "title",
+                        "type": "text",
+                        "required": 1,
+                        "placeholder": "e.g., Official UK Gov Visa Application"
+                    },
+                    {
+                        "key": "field_reference_url",
+                        "label": "URL",
+                        "name": "url",
+                        "type": "url",
+                        "required": 1,
+                        "placeholder": "https://..."
+                    },
+                    {
+                        "key": "field_reference_description",
+                        "label": "Description",
+                        "name": "description",
+                        "type": "text",
+                        "required": 0,
+                        "placeholder": "Brief description of this resource"
+                    }
+                ]
+            },
+            {
+                "key": "field_guide_actions",
+                "label": "Call-to-Action Buttons",
+                "name": "actions",
+                "type": "repeater",
+                "instructions": "Add action buttons for key next steps (e.g., 'Apply for Visa', 'Book Appointment').",
+                "required": 0,
+                "collapsed": "field_action_text",
+                "min": 0,
+                "max": 5,
+                "layout": "table",
+                "button_label": "Add Action",
+                "sub_fields": [
+                    {
+                        "key": "field_action_text",
+                        "label": "Button Text",
+                        "name": "text",
+                        "type": "text",
+                        "required": 1,
+                        "placeholder": "e.g., Apply Now, Get Started"
+                    },
+                    {
+                        "key": "field_action_url",
+                        "label": "Action URL",
+                        "name": "url",
+                        "type": "url",
+                        "required": 1,
+                        "placeholder": "https://..."
+                    },
+                    {
+                        "key": "field_action_type",
+                        "label": "Button Type",
+                        "name": "type",
+                        "type": "select",
+                        "required": 1,
+                        "choices": {
+                            "primary": "Primary (most important action)",
+                            "secondary": "Secondary",
+                            "external": "External Link"
+                        },
+                        "default_value": "secondary"
+                    }
+                ]
+            },
+            {
+                "key": "field_guide_difficulty",
+                "label": "Difficulty Level",
+                "name": "difficulty",
+                "type": "select",
+                "instructions": "How complex is this process for users?",
+                "required": 0,
+                "choices": {
+                    "beginner": "Beginner - Simple process",
+                    "intermediate": "Intermediate - Some complexity",
+                    "advanced": "Advanced - Complex process"
+                },
+                "default_value": "intermediate",
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 1
+            },
+            {
+                "key": "field_guide_estimated_time",
+                "label": "Estimated Time to Complete",
+                "name": "estimated_time",
+                "type": "text",
+                "instructions": "How long does this process typically take? (e.g., '2-3 weeks', '1 day', '30 minutes')",
+                "required": 0,
+                "placeholder": "e.g., 2-3 weeks"
+            },
+            {
+                "key": "field_guide_cost_info",
+                "label": "Cost Information",
+                "name": "cost_info",
+                "type": "textarea",
+                "instructions": "Any fees, costs, or financial requirements associated with this guide.",
+                "required": 0,
+                "rows": 2,
+                "new_lines": "br",
+                "placeholder": "e.g., Visa fee: £1,408, NHS surcharge: £624/year"
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "guides"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "Custom fields for relocation guides with audience-specific content."
+    },
+    {
+        "key": "group_relocation_faqs",
+        "title": "FAQ Content Fields", 
+        "fields": [
+            {
+                "key": "field_faq_locale",
+                "label": "Locale",
+                "name": "locale",
+                "type": "select",
+                "instructions": "Select the language locale for this FAQ.",
+                "required": 1,
+                "choices": {
+                    "en": "English (for →Hungary portal)",
+                    "hu": "Hungarian (for HU→UK portal)"
+                },
+                "default_value": "",
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 1,
+                "return_format": "value"
+            },
+            {
+                "key": "field_faq_answer",
+                "label": "Answer",
+                "name": "answer",
+                "type": "wysiwyg",
+                "instructions": "The detailed answer to this frequently asked question.",
+                "required": 1,
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1,
+                "delay": 1
+            },
+            {
+                "key": "field_faq_related_guides",
+                "label": "Related Guides",
+                "name": "related_guides",
+                "type": "relationship",
+                "instructions": "Select guides that provide more detailed information about this topic.",
+                "required": 0,
+                "post_type": ["guides"],
+                "taxonomy": [],
+                "filters": ["search", "taxonomy"],
+                "elements": ["featured_image"],
+                "min": 0,
+                "max": 3,
+                "return_format": "object"
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "faqs"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "Custom fields for FAQ content with audience targeting."
+    }
+]

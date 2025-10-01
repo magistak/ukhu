@@ -11,13 +11,31 @@ Each language serves a completely different audience and direction, with tailore
 
 Preferred communication style: Simple, everyday language.
 
+# Recent Changes
+
+**October 2025 - Modern UI Transformation**
+- Implemented jaw-dropping 2025 design system with flashy modern effects
+- Aurora animated gradients in hero sections with dual-layer background animations
+- Glassmorphism effects throughout (frosted glass header, trust indicators)
+- 3D card hover effects with perspective transforms and gradient borders
+- Modern gradient buttons with shimmer, magnetic hover, and ripple effects
+- Gradient text treatments on headings and logo
+- Full accessibility support (prefers-reduced-motion, hover gating)
+- Performance-optimized GPU-accelerated animations
+
 # System Architecture
 
 ## Frontend Architecture
 - **Next.js 14** with TypeScript for the web application using App Router
 - **Internationalization**: Path-based routing (`/en/*`, `/hu/*`) with locale-aware content loading
 - **Static Site Generation (SSG)** for most content pages with Incremental Static Regeneration (ISR) for time-sensitive content
-- **Responsive Design**: Mobile-first approach with minimal CSS and no UI frameworks
+- **Responsive Design**: Mobile-first approach with CSS Modules architecture
+- **Modern Design System (2025)**: 
+  - Aurora gradient animations and glassmorphism effects
+  - 3D transforms and perspective-based interactions
+  - GPU-accelerated animations with reduced-motion support
+  - Gradient text, glow effects, and modern visual treatments
+  - Comprehensive utility class system for flashy UI components
 - **SEO Optimization**: Built-in meta tags, sitemaps, robots.txt, and canonical URLs
 
 ## Backend Architecture
@@ -70,9 +88,10 @@ Preferred communication style: Simple, everyday language.
 - **PNPM** for package management with workspace support
 
 ## Build and Deployment
-- **Vercel/Firebase Hosting** for CDN-based static site delivery
-- **GitHub Actions** (implied) for CI/CD pipeline
-- **Firebase CLI** for local development and deployment
+- **Netlify** for production deployment (GitHub → Netlify workflow)
+- **GitHub Repository**: magistak/ukhu
+- **Firebase CLI** for local development and Firebase services deployment
+- **PNPM** workspaces for monorepo package management
 
 ## Third-party Integrations
 - **Email Service Provider** (adapter pattern for future integration)

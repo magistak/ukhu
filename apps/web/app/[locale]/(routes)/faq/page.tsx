@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import { loadFaqs } from '@/lib/content';
 import { getDictionary, isLocale, type Locale } from '@ukhu/i18n';
+import styles from './faq.module.css';
 
 interface FaqPageProps {
   params: Promise<{ locale: string }>;
@@ -18,16 +19,16 @@ export default async function FaqPage({ params }: FaqPageProps) {
   const faqs = await loadFaqs(locale);
 
   return (
-    <section style={{ display: 'grid', gap: '1rem' }}>
-      <h1>{dictionary.faq.title}</h1>
+    <section className={styles.container}>
+      <h1 className={styles.title}>{dictionary.faq.title}</h1>
       {faqs.length === 0 ? (
-        <p>{dictionary.faq.empty}</p>
+        <p className={styles.emptyState}>{dictionary.faq.empty}</p>
       ) : (
-        <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: '1rem' }}>
+        <ul className={styles.faqList}>
           {faqs.map((faq) => (
-            <li key={faq.id} style={{ background: 'white', padding: '1rem', borderRadius: '0.5rem' }}>
-              <h2 style={{ marginTop: 0 }}>{faq.question}</h2>
-              <div dangerouslySetInnerHTML={{ __html: faq.answer }} />
+            <li key={faq.id} className={styles.faqItem}>
+              <h2 className={styles.question}>{faq.question}</h2>
+              <div className={styles.answer} dangerouslySetInnerHTML={{ __html: faq.answer }} />
             </li>
           ))}
         </ul>

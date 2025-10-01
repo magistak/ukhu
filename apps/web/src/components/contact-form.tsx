@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, FormEvent } from 'react';
+import styles from './contact-form.module.css';
 
 interface ContactFormProps {
   locale: string;
@@ -63,27 +64,27 @@ export function ContactForm({ locale, labels }: ContactFormProps) {
   }
 
   return (
-    <div className="card" style={{ maxWidth: '600px' }}>
-      <h3 style={{ marginTop: 0, marginBottom: 'var(--space-lg)' }}>{labels.formTitle}</h3>
-      <form onSubmit={handleSubmit} className="grid" style={{ gap: 'var(--space-lg)' }}>
-        <label style={{ display: 'grid', gap: 'var(--space-xs)' }}>
-          <span>{labels.name}</span>
+    <div className={`card ${styles.formContainer}`}>
+      <h3 className={styles.formTitle}>{labels.formTitle}</h3>
+      <form onSubmit={handleSubmit} className={styles.form}>
+        <label className={styles.field}>
+          <span className={styles.label}>{labels.name}</span>
           <input
             name="name"
             type="text"
             required
           />
         </label>
-        <label style={{ display: 'grid', gap: 'var(--space-xs)' }}>
-          <span>{labels.email}</span>
+        <label className={styles.field}>
+          <span className={styles.label}>{labels.email}</span>
           <input
             name="email"
             type="email"
             required
           />
         </label>
-        <label style={{ display: 'grid', gap: 'var(--space-xs)' }}>
-          <span>{labels.message}</span>
+        <label className={styles.field}>
+          <span className={styles.label}>{labels.message}</span>
           <textarea
             name="message"
             rows={5}
@@ -101,13 +102,7 @@ export function ContactForm({ locale, labels }: ContactFormProps) {
           {status === 'loading' ? labels.submitting : labels.submit}
         </button>
         {message && (
-          <div style={{ 
-            padding: 'var(--space-md)',
-            borderRadius: 'var(--radius-md)',
-            backgroundColor: status === 'success' ? '#dcfce7' : '#fef2f2',
-            color: status === 'success' ? '#166534' : '#dc2626',
-            border: `1px solid ${status === 'success' ? '#bbf7d0' : '#fecaca'}`
-          }}>
+          <div className={`${styles.message} ${status === 'success' ? styles.messageSuccess : styles.messageError}`}>
             {message}
           </div>
         )}

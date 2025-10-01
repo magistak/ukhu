@@ -1,0 +1,56 @@
+.formContainer {
+  max-width: 600px;
+}
+
+.formTitle {
+  margin-top: 0;
+  margin-bottom: var(--space-lg);
+  color: var(--color-text);
+}
+
+.form {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.field {
+  display: grid;
+  gap: var(--space-xs);
+}
+
+.label {
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.message {
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  border: 1px solid;
+}
+
+.messageSuccess {
+  background-color: rgba(34, 197, 94, 0.1);
+  color: #16a34a;
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+.messageError {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+@media (prefers-color-scheme: dark) {
+  .messageSuccess {
+    background-color: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+    border-color: rgba(34, 197, 94, 0.4);
+  }
+
+  .messageError {
+    background-color: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+    border-color: rgba(239, 68, 68, 0.4);
+  }
+}

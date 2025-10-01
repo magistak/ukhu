@@ -1,0 +1,72 @@
+.container {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.title {
+  font-size: var(--text-3xl);
+  background: linear-gradient(135deg, #1e40af 0%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+  font-weight: 700;
+}
+
+.faqList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.faqItem {
+  background: var(--color-surface);
+  padding: var(--space-xl);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.faqItem:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary);
+}
+
+.question {
+  margin-top: 0;
+  margin-bottom: var(--space-md);
+  color: var(--color-text);
+  font-size: var(--text-xl);
+  font-weight: 600;
+}
+
+.answer {
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.answer :global(p) {
+  margin: 0 0 var(--space-md) 0;
+}
+
+.answer :global(p:last-child) {
+  margin-bottom: 0;
+}
+
+.answer :global(a) {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.answer :global(a:hover) {
+  color: var(--color-primary-light);
+}
+
+.emptyState {
+  color: var(--color-text-secondary);
+  text-align: center;
+  padding: var(--space-2xl);
+}

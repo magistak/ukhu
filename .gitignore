@@ -12,3 +12,23 @@ firebase-debug.log
 .functions
 .DS_Store
 .secrets
+*.log
+.netlify
+.vercel
+
+# Temporary files
+*.tmp
+*.swp
+*~
+
+# OS files
+Thumbs.db
+
+# Build outputs
+apps/web/.next
+apps/web/out
+packages/*/dist
+
+# TypeScript
+*.tsbuildinfo
+apps/web/tsconfig.tsbuildinfo

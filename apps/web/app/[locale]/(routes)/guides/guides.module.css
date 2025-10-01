@@ -69,6 +69,14 @@
   }
 }
 
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .guideCard {
+    background: var(--color-surface);
+    border-color: var(--color-border);
+  }
+}
+
 .guideTitle {
   margin: 0;
   font-size: var(--text-xl);

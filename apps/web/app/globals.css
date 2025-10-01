@@ -64,23 +64,23 @@
   /* Modern 2025 Flashy Design Tokens */
   
   /* Aurora gradient colors */
-  --gradient-aurora-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --gradient-aurora-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  --gradient-aurora-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-  --gradient-aurora-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  --gradient-aurora-1: linear-gradient(135deg, #1e40af 0%, #0891b2 100%);
+  --gradient-aurora-2: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+  --gradient-aurora-3: linear-gradient(135deg, #3b82f6 0%, #14b8a6 100%);
+  --gradient-aurora-4: linear-gradient(135deg, #06b6d4 0%, #14b8a6 100%);
   
   /* Vibrant gradient combinations */
-  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --gradient-sunset: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-  --gradient-ocean: linear-gradient(135deg, #2e3192 0%, #1bffff 100%);
-  --gradient-fire: linear-gradient(135deg, #f83600 0%, #f9d423 100%);
-  --gradient-neon: linear-gradient(135deg, #08aeea 0%, #2af598 100%);
+  --gradient-primary: linear-gradient(135deg, #1e40af 0%, #06b6d4 100%);
+  --gradient-sunset: linear-gradient(135deg, #0ea5e9 0%, #14b8a6 100%);
+  --gradient-ocean: linear-gradient(135deg, #1e3a8a 0%, #06b6d4 100%);
+  --gradient-fire: linear-gradient(135deg, #2563eb 0%, #14b8a6 100%);
+  --gradient-neon: linear-gradient(135deg, #0284c7 0%, #14b8a6 100%);
   
   /* Glow and neon effects */
-  --glow-primary: 0 0 20px rgba(102, 126, 234, 0.5);
-  --glow-accent: 0 0 20px rgba(5, 150, 105, 0.5);
-  --glow-neon: 0 0 30px rgba(42, 245, 152, 0.6);
-  --glow-intense: 0 0 40px rgba(102, 126, 234, 0.8), 0 0 80px rgba(102, 126, 234, 0.4);
+  --glow-primary: 0 0 20px rgba(6, 182, 212, 0.5);
+  --glow-accent: 0 0 20px rgba(20, 184, 166, 0.5);
+  --glow-neon: 0 0 30px rgba(20, 184, 166, 0.6);
+  --glow-intense: 0 0 40px rgba(6, 182, 212, 0.8), 0 0 80px rgba(6, 182, 212, 0.4);
   
   /* Glassmorphism */
   --glass-blur: 12px;
@@ -212,9 +212,9 @@ button {
 
 .btn-primary {
   position: relative;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #1e40af 0%, #06b6d4 100%);
   color: white;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 4px 15px rgba(6, 182, 212, 0.4);
   overflow: hidden;
   z-index: 1;
 }
@@ -232,8 +232,8 @@ button {
 
 @media (hover: hover) {
   .btn-primary:hover {
-    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6), var(--glow-primary);
+    background: linear-gradient(135deg, #06b6d4 0%, #1e40af 100%);
+    box-shadow: 0 8px 25px rgba(6, 182, 212, 0.6), var(--glow-primary);
     transform: translateY(-2px) scale(1.02);
   }
   
@@ -260,7 +260,7 @@ button {
   position: absolute;
   inset: -2px;
   border-radius: inherit;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #1e40af 0%, #06b6d4 100%);
   z-index: -1;
   opacity: 0.3;
   transition: opacity 0.3s ease;
@@ -270,7 +270,7 @@ button {
   .btn-secondary:hover {
     color: var(--color-primary);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);
+    box-shadow: 0 8px 20px rgba(6, 182, 212, 0.2);
   }
   
   .btn-secondary:hover::before {
@@ -284,9 +284,9 @@ button {
 
 .btn-accent {
   position: relative;
-  background: linear-gradient(135deg, #08aeea 0%, #2af598 100%);
+  background: linear-gradient(135deg, #0284c7 0%, #14b8a6 100%);
   color: white;
-  box-shadow: 0 4px 15px rgba(42, 245, 152, 0.4);
+  box-shadow: 0 4px 15px rgba(20, 184, 166, 0.4);
   overflow: hidden;
 }
 
@@ -305,8 +305,8 @@ button {
 
 @media (hover: hover) {
   .btn-accent:hover {
-    background: linear-gradient(135deg, #2af598 0%, #08aeea 100%);
-    box-shadow: 0 8px 25px rgba(42, 245, 152, 0.6), var(--glow-neon);
+    background: linear-gradient(135deg, #14b8a6 0%, #0284c7 100%);
+    box-shadow: 0 8px 25px rgba(20, 184, 166, 0.6), var(--glow-neon);
     transform: translateY(-2px) scale(1.02);
   }
   
@@ -549,7 +549,7 @@ label {
   inset: 0;
   border-radius: inherit;
   padding: 2px;
-  background: var(--gradient-primary);
+  background: linear-gradient(135deg, #1e40af 0%, #06b6d4 100%);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -621,10 +621,10 @@ label {
 /* Pulse glow animation */
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
   }
   50% {
-    box-shadow: 0 0 40px rgba(102, 126, 234, 0.8), 0 0 80px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 0 40px rgba(6, 182, 212, 0.8), 0 0 80px rgba(6, 182, 212, 0.4);
   }
 }
 

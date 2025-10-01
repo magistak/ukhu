@@ -701,6 +701,11 @@ label {
   }
   
   /* Glassmorphism adjustments for dark mode */
+  .glass {
+    background: rgba(15, 23, 42, 0.7) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+  
   .header {
     background: rgba(15, 23, 42, 0.85) !important;
     border-bottom: 1px solid rgba(6, 182, 212, 0.2) !important;
@@ -724,10 +729,5 @@ label {
   .card {
     background: var(--color-surface);
     border-color: var(--color-border);
-  }
-  
-  /* CTA section adjustments */
-  .cta::after {
-    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%) !important;
   }
 }

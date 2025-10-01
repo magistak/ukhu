@@ -1,13 +1,19 @@
 .header {
   width: 100%;
-  background: var(--color-surface);
-  border-bottom: 1px solid var(--color-border);
-  box-shadow: var(--shadow-sm);
+  background: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(102, 126, 234, 0.05);
   position: sticky;
   top: 0;
   z-index: 50;
-  backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.3s var(--ease-smooth);
+}
+
+.header:hover {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(102, 126, 234, 0.1), var(--glow-primary);
 }
 
 .container {
@@ -23,16 +29,21 @@
 .logo {
   font-weight: 700;
   font-size: var(--text-xl);
-  color: var(--color-primary);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   text-decoration: none;
   display: flex;
   align-items: center;
   gap: var(--space-xs);
-  transition: color 0.2s ease;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(102, 126, 234, 0.2));
 }
 
 .logo:hover {
-  color: var(--color-primary-light);
+  filter: drop-shadow(0 4px 8px rgba(102, 126, 234, 0.4));
+  transform: translateY(-1px);
 }
 
 .desktopNav {
@@ -57,16 +68,36 @@
 .navLink {
   padding: var(--space-sm) var(--space-md);
   border-radius: var(--radius-md);
-  transition: all 0.2s ease;
+  transition: all 0.3s var(--ease-smooth);
   font-weight: 500;
   color: var(--color-text);
   text-decoration: none;
   white-space: nowrap;
+  position: relative;
 }
 
-.navLink:hover {
-  background-color: var(--color-surface-hover);
-  color: var(--color-primary);
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  transition: all 0.3s var(--ease-smooth);
+  transform: translateX(-50%);
+}
+
+@media (hover: hover) {
+  .navLink:hover {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+    color: var(--color-primary);
+    transform: translateY(-1px);
+  }
+  
+  .navLink:hover::after {
+    width: 80%;
+  }
 }
 
 .hamburger {

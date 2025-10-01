@@ -9,8 +9,12 @@
 
 .title {
   font-size: var(--text-3xl);
-  color: var(--color-primary-dark);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin: 0;
+  font-weight: 700;
 }
 
 .guidesList {
@@ -22,20 +26,47 @@
 }
 
 .guideCard {
+  position: relative;
   background: var(--color-surface);
   padding: var(--space-xl);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
-  border: 1px solid var(--color-border);
-  transition: all 0.2s ease;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  transition: all 0.3s var(--ease-smooth);
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
+  transform-style: preserve-3d;
 }
 
-.guideCard:hover {
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-2px);
+.guideCard::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+@media (hover: hover) {
+  .guideCard:hover {
+    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3), var(--glow-primary);
+    transform: perspective(1000px) rotateX(2deg) rotateY(3deg) translateY(-8px);
+    border-color: transparent;
+  }
+  
+  .guideCard:hover::before {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .guideCard:hover {
+    transform: translateY(-2px) !important;
+  }
 }
 
 .guideTitle {

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { loadGuides } from '@/lib/content';
 import { getDictionary, isLocale, buildRoute, type Locale } from '@ukhu/i18n';
+import styles from './guides.module.css';
 
 interface GuidesPageProps {
   params: Promise<{ locale: string }>;
@@ -19,24 +20,28 @@ export default async function GuidesPage({ params }: GuidesPageProps) {
   const guides = await loadGuides(locale);
 
   return (
-    <section style={{ display: 'grid', gap: '1.5rem' }}>
-      <header>
-        <h1>{dictionary.guides.title}</h1>
+    <section className={styles.container}>
+      <header className={styles.header}>
+        <h1 className={styles.title}>{dictionary.guides.title}</h1>
       </header>
       {guides.length === 0 ? (
-        <p>{dictionary.guides.empty}</p>
+        <div className={styles.emptyState}>
+          <p>{dictionary.guides.empty}</p>
+        </div>
       ) : (
-        <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'grid', gap: '1rem' }}>
+        <ul className={styles.guidesList}>
           {guides.map((guide) => (
-            <li key={guide.id} style={{ background: 'white', padding: '1rem', borderRadius: '0.5rem' }}>
-              <h2 style={{ marginTop: 0 }}>{guide.title}</h2>
-              {guide.excerpt && <p dangerouslySetInnerHTML={{ __html: guide.excerpt }} />}
-              <p style={{ fontSize: '0.85rem', color: '#666' }}>
+            <li key={guide.id} className={styles.guideCard}>
+              <h2 className={styles.guideTitle}>{guide.title}</h2>
+              {guide.excerpt && (
+                <div className={styles.guideExcerpt} dangerouslySetInnerHTML={{ __html: guide.excerpt }} />
+              )}
+              <p className={styles.guideMeta}>
                 {dictionary.guides.updated}:{' '}
                 {guide.updatedAt ? new Date(guide.updatedAt).toLocaleDateString(locale) : '—'}
               </p>
-              <Link href={`${buildRoute(locale, 'guides')}/${guide.slug}`}>
-                {dictionary.home.readGuide}
+              <Link href={`${buildRoute(locale, 'guides')}/${guide.slug}`} className={styles.guideLink}>
+                {dictionary.home.readGuide} →
               </Link>
             </li>
           ))}
